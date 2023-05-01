@@ -3,9 +3,9 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 927801033080.dkr.ecr.us-east-1.amazonaws.com
-  
+      - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 927801033080.dkr.ecr.ap-northeast-1.amazonaws.com
+      - aws --version 
   post_build:
     commands:
-      - docker tag webapprepo:latest 927801033080.dkr.ecr.us-east-1.amazonaws.com/webapprepo:latest
-      - docker push 927801033080.dkr.ecr.us-east-1.amazonaws.com/webapprepo:latest
+      - docker tag mycon:latest 927801033080.dkr.ecr.ap-northeast-1.amazonaws.com/mycon:latest
+      - docker push 927801033080.dkr.ecr.ap-northeast-1.amazonaws.com/mycon:latest
